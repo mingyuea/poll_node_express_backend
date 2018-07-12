@@ -67,14 +67,12 @@ app.get('/stored', (req, res) => {
 					}
 					cateArr.push(resObj);
 				}
-				console.log(cateArr)
 				res.send(cateArr);
 			});
 	
 });
 
 app.post('/stored', (req, res) => {
-	console.log(req.body);
 
 	let pollId = req.body.pollId;
 	if(Number(pollId) == 0){
@@ -104,6 +102,6 @@ app.post('/stored', (req, res) => {
 	}
 });
 
-app.listen(5003, () => 
+app.listen(process.env.PORT || 5003, () => 
 	console.log('app is lisenting on port 5003')
 );
