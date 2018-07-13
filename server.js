@@ -26,6 +26,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.get('/init', (req, res) => {
 	db.collection(collName).find().toArray((err, data) => {
 		let sendData = data.map(dataObj => ({
